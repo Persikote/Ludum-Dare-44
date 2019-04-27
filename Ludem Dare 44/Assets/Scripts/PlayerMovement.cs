@@ -37,12 +37,10 @@ public class PlayerMovement : MonoBehaviour
 		if (Input.GetButtonDown("Jump") && controller.info.bottom)
 		{
 			velocity.y = maxJumpVelocity;
-			Debug.Log("Jumped");
 		}
 		if (Input.GetButtonUp("Jump") && velocity.y > minJumpVelocity)
 		{
 			velocity.y = minJumpVelocity;
-			Debug.Log("Stopped Jumping");
 		}
 
 		controller.Move(velocity * Time.deltaTime);
