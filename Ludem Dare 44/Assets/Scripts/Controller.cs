@@ -105,7 +105,7 @@ public class Controller : MonoBehaviour
 			{
 				float slopeAngle = -Vector2.SignedAngle(hit.normal, Vector2.up);
 
-				if (i == 0 && slopeAngle <= maxClimbAngle)
+				if (i == 0 && slopeAngle <= maxClimbAngle && slopeAngle >= -maxClimbAngle)
 				{
 					float distanceToSlope = 0;
 
@@ -119,7 +119,7 @@ public class Controller : MonoBehaviour
 					velocity.x += distanceToSlope * direction;
 				}
 
-				if (!info.climbingSlope || slopeAngle > maxClimbAngle)
+				if (!info.climbingSlope || slopeAngle > maxClimbAngle && slopeAngle < -maxClimbAngle)
 				{
 					distance = hit.distance;
 					velocity.x = (hit.distance - skinWidth) * direction;
