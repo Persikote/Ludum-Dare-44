@@ -34,7 +34,7 @@ public class Controller : MonoBehaviour
 		Bounds bounds = collider.bounds;
 		bounds.Expand(-2 * skinWidth);
 
-		rayInterval = Mathf.Clamp(rayInterval, Mathf.Min(bounds.size.x, bounds.size.y), float.MaxValue);
+		rayInterval = Mathf.Clamp(rayInterval, rayInterval, Mathf.Min(bounds.size.x, bounds.size.y));
 
 		horizontalRayCount = (int)Mathf.Ceil(bounds.size.y / rayInterval) + 1;
 		verticalRayCount = (int)Mathf.Ceil(bounds.size.x / rayInterval) + 1;
