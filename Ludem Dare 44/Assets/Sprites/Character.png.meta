@@ -1,28 +1,19 @@
 fileFormatVersion: 2
-guid: 733f6453244cc6d4fbe23cfb4b0808c3
+guid: f96b72864dd5a9149a1b8cbc96dbad84
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3544444359758827780
-    second: Guns_Pistol
+      213: -3232347426240286313
+    second: Character_Idle
   - first:
-      213: 4666319611482381093
-    second: Guns_Bullet
+      213: -3999538402640730400
+    second: Character_Step_1
   - first:
-      213: -6419685251043233376
-    second: Guns_Pistol_Up
+      213: 2826316799232046493
+    second: Character_Step_2
   - first:
-      213: -2392936286823182932
-    second: Guns_Pistol_Down
-  - first:
-      213: -5097773816838745618
-    second: Guns_Pistol_DownSide
-  - first:
-      213: 6341338270397305015
-    second: Guns_Pistol_UpSide
-  - first:
-      213: -4254059877319897387
-    second: Guns_Shotgun
+      213: -1384433997194553942
+    second: Character_Hand
   externalObjects: {}
   serializedVersion: 8
   mipmaps:
@@ -116,64 +107,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Guns_Pistol
+      name: Character_Idle
       rect:
         serializedVersion: 2
         x: 0
         y: 5
-        width: 8
-        height: 11
+        width: 14
+        height: 22
       alignment: 9
-      pivot: {x: 0.3125, y: 0.22727273}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1e99c8142f0f99449e97add7bbc96c0
-      internalID: -3544444359758827780
+      spriteID: 596433b5317a1b8459f502bf9fac6ed4
+      internalID: -3232347426240286313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Guns_Bullet
+      name: Character_Step_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 5
+        width: 14
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: -0.045454547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1db546c0a9229743a5a669d15f6361c
+      internalID: -3999538402640730400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Step_2
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 5
+        width: 14
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: -0.045454547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec3ad03584aa884dbb792f1b48de4bb
+      internalID: 2826316799232046493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_Hand
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3
+        width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbe5ede6e7967754c8a14014d44d98bc
-      internalID: 4666319611482381093
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Guns_Shotgun
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 1
-        width: 8
-        height: 15
-      alignment: 9
-      pivot: {x: 0.3125, y: 0.16666667}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 062a8c44155c2da4483bbb663e5b021c
-      internalID: -4254059877319897387
+      spriteID: 173e1077ee1778147b419eadf2b1cda6
+      internalID: -1384433997194553942
       vertices: []
       indices: 
       edges: []
@@ -181,7 +193,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e03c64b3e65d3224c9b76ccc066b5d05
+    spriteID: ca192f176ddbb0147a95bd5b9327233b
     internalID: 0
     vertices: []
     indices: 

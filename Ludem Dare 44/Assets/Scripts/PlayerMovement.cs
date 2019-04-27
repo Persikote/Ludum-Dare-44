@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float minJumpHeight;
 	private float maxJumpVelocity;
 	private float minJumpVelocity;
-	private Vector2 velocity;
-	private Controller controller;
+	internal Vector2 velocity;
+	internal Controller controller;
 
 	private void Start()
 	{

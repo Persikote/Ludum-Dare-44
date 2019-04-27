@@ -4,48 +4,54 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-	[SerializeField] private Transform arm;
+	[SerializeField] private Transform origo, pistolHand, shotgunHand;
+	[SerializeField] private float maxMouseDistance;
+	[SerializeField] private float maxHandDistance;
+	[SerializeField] private float handSmoothing;
+	[SerializeField] private float handRotationSpeed;
+	private Quaternion targetRotation;
+	private Vector2 targetPosition;
+	private Vector2 velocityPosition;
 
 	[Space(7)]
 	[SerializeField] private ObjectPool bulletPool;
-	[SerializeField] private Gun gun;
-	[SerializeField] private SpriteRenderer gunRenderer;
-
-	private void Start()
-	{
-		SetGun(gun);
-	}
+	[SerializeField] private float fireRate;
+	[SerializeField] private float bulletSpeed;
+	[SerializeField] private float bulletSpeedVariation;
+	[SerializeField] private int bulletAmount;
+	[SerializeField] private float bulletSpread;
+	[SerializeField] private Vector2 bulletOffset;
+	private float fireTimer;
+	private bool automatic;
+	internal bool shotgunEquipped;
 
 	private void Update()
 	{
-		Vector2 mouseDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - arm.position;
-		float aimAngle = -Vector2.Angle(Vector2.up, mouseDirection);
-		arm.rotation = Quaternion.Euler(0, 0, aimAngle);
+		Vector2 mouseDistance = Camera.main.ScreenToWorldPoint(Input.mousePosition) - origo.position;
+		float aimAngle = Vector2.SignedAngle(Vector2.up, mouseDistance);
+		targetRotation = Quaternion.Euler(0, 0, aimAngle);
+		targetPosition = (Vector2)origo.position + Mathf.Clamp(mouseDistance.sqrMagnitude / maxMouseDistance, 0, 1) * maxHandDistance * mouseDistance.normalized;
 
-		if ((!gun.automatic && Input.GetButtonDown("Fire") && Time.time >= gun.fireTimer) || (gun.automatic && Input.GetButton("Fire") && Time.time >= gun.fireTimer))
+		pistolHand.rotation = shotgunHand.rotation = Quaternion.RotateTowards(shotgunHand.rotation, targetRotation, handRotationSpeed * Time.deltaTime);
+		pistolHand.position = shotgunHand.position = Vector2.SmoothDamp(shotgunHand.position, targetPosition, ref velocityPosition, handSmoothing);
+
+		if ((!automatic && Input.GetButtonDown("Fire") && Time.time >= fireTimer) || (automatic && Input.GetButton("Fire") && Time.time >= fireTimer))
 		{
-			gun.fireTimer = Time.time + 1 / gun.fireRate;
+			fireTimer = Time.time + 1 / fireRate;
 			FireGun(aimAngle);
 		}
 	}
 
 	private void FireGun(float aimAngle)
 	{
-		for (int i = 0; i < gun.bulletAmount; i++)
+		for (int i = 0; i < bulletAmount; i++)
 		{
-			Bullet bullet = bulletPool.Instantiate(gunRenderer.transform.position + gunRenderer.transform.TransformVector(gun.muzzleOffset), Quaternion.Euler(0, 0, aimAngle)) as Bullet;
+			Bullet bullet = bulletPool.Instantiate(pistolHand.transform.position + pistolHand.transform.TransformVector(bulletOffset), Quaternion.Euler(0, 0, aimAngle)) as Bullet;
 
-			float bulletAngle = -aimAngle + Random.Range(-gun.bulletSpread / 2, gun.bulletSpread / 2);
+			float bulletAngle = -aimAngle + Random.Range(-bulletSpread / 2, bulletSpread / 2);
 			Vector2 bulletDirection = new Vector2(Mathf.Sin(bulletAngle * Mathf.Deg2Rad), Mathf.Cos(bulletAngle * Mathf.Deg2Rad));
 
-			bullet.velocity = bulletDirection * (gun.bulletSpeed + Random.Range(-gun.bulletSpeedVariation / 2, gun.bulletSpeedVariation / 2));
+			bullet.velocity = bulletDirection * (bulletSpeed + Random.Range(-bulletSpeedVariation / 2, bulletSpeedVariation / 2));
 		}
-	}
-
-	public void SetGun(Gun newGun)
-	{
-		gun = newGun;
-		gunRenderer.sprite = gun.sprite;
-		gun.fireTimer = 0;
 	}
 }
