@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-	[SerializeField] private Transform origo, pistolHand, shotgunHand;
+	[SerializeField] private Transform origo, guns, pistolHand, shotgunHand;
 	[SerializeField] private float maxMouseDistance;
 	[SerializeField] private float maxHandDistance;
 	[SerializeField] private float handSmoothing;
@@ -29,11 +29,11 @@ public class PlayerShooting : MonoBehaviour
 	{
 		Vector2 mouseDistance = Camera.main.ScreenToWorldPoint(Input.mousePosition) - origo.position;
 		float aimAngle = Vector2.SignedAngle(Vector2.up, mouseDistance);
-		targetRotation = Quaternion.Euler(0, 0, aimAngle);
+		targetRotation = Quaternion.Euler(0, (aimAngle < 0) ? 0 : 180, -Mathf.Abs(aimAngle)); 
 		targetPosition = (Vector2)origo.position + Mathf.Clamp(mouseDistance.sqrMagnitude / maxMouseDistance, 0, 1) * maxHandDistance * mouseDistance.normalized;
 
 		pistolHand.rotation = shotgunHand.rotation = Quaternion.RotateTowards(shotgunHand.rotation, targetRotation, handRotationSpeed * Time.deltaTime);
-		pistolHand.position = shotgunHand.position = Vector2.SmoothDamp(shotgunHand.position, targetPosition, ref velocityPosition, handSmoothing);
+		guns.position = Vector2.SmoothDamp(guns.position, targetPosition, ref velocityPosition, handSmoothing);
 
 		if ((!automatic && Input.GetButtonDown("Fire") && Time.time >= fireTimer) || (automatic && Input.GetButton("Fire") && Time.time >= fireTimer))
 		{

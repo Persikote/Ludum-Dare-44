@@ -4,7 +4,49 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -6073337918525036791
-    second: Planks
+    second: Environment_Shading_Base
+  - first:
+      213: 7056120733622186675
+    second: Environment_Shading_Wall
+  - first:
+      213: -1134790330997396573
+    second: Environment_Planks_Floor
+  - first:
+      213: -8950833590986173219
+    second: Environment_Bricks_Wall
+  - first:
+      213: 6233863001083571226
+    second: Environment_Tapestry_Base
+  - first:
+      213: -6194224908940028290
+    second: Environment_Shading_FloorCorner
+  - first:
+      213: -4700325768071033103
+    second: Environment_Shading_CeilCorner
+  - first:
+      213: -8688261155859096608
+    second: Environment_Shading_Ceiling
+  - first:
+      213: 2707089035253314643
+    second: Environment_Stairs_Base
+  - first:
+      213: -7953818917235469348
+    second: Environment_Stairs
+  - first:
+      213: -2753597471096352698
+    second: Environment_Tapastry
+  - first:
+      213: 5789932342788634851
+    second: Environment_Tapestry_NoTop
+  - first:
+      213: -6782736846904532838
+    second: Environment_Planks
+  - first:
+      213: -988753688361544025
+    second: Environment_Fence
+  - first:
+      213: -6386830580805619769
+    second: Environment_Fence_Diagonal
   externalObjects: {}
   serializedVersion: 8
   mipmaps:
@@ -48,7 +90,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -98,22 +140,274 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Planks
+      name: Environment_Shading_Base
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
+        x: 12
+        y: 0
+        width: 12
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 1, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 09ec356f1f66087469939baa736eec90
       internalID: -6073337918525036791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Environment_Shading_Wall
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 1, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b896da4ad227bb49a6367dd604ec34f
+      internalID: 7056120733622186675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Environment_Tapestry_Base
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 3, z: 1, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5dc93c1a14e6f54d87d646eb0ec8fc3
+      internalID: 6233863001083571226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Environment_Shading_FloorCorner
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b83b2fc7a4def47909a1b28e639dc6
+      internalID: -6194224908940028290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Environment_Shading_CeilCorner
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441a567b0c9d8ce4c9137e2e445a5660
+      internalID: -4700325768071033103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Environment_Shading_Ceiling
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 24
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 1, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dadfb7c322a4474d8304d72739761e6
+      internalID: -8688261155859096608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Environment_Stairs_Base
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 13
+        width: 21
+        height: 16
+      alignment: 9
+      pivot: {x: 0.52380955, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cef091da417fb04abd38ff92bf2b26b
+      internalID: 2707089035253314643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Environment_Stairs
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 30
+        width: 21
+        height: 16
+      alignment: 9
+      pivot: {x: 0.52380955, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec85f037d631460498792b942ed95f9d
+      internalID: -7953818917235469348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Environment_Tapastry
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1317f6d99cbd87c45b309e88bcf18de8
+      internalID: -2753597471096352698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Environment_Tapestry_NoTop
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 3, z: 1, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf146aec7ebd914590c3ffb8c775c82
+      internalID: 5789932342788634851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Environment_Planks
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 13
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 1, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257dbf78cd27bb04184e954ee9efa5dc
+      internalID: -6782736846904532838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Environment_Fence
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 49
+        width: 20
+        height: 15
+      alignment: 9
+      pivot: {x: 0.15, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6d9cbea802f4948a4c735b82cae989
+      internalID: -988753688361544025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Environment_Fence_Diagonal
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 37
+        width: 20
+        height: 27
+      alignment: 9
+      pivot: {x: 0.15, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34513a00df7a2284da5146bcd7c1ccb0
+      internalID: -6386830580805619769
       vertices: []
       indices: 
       edges: []
