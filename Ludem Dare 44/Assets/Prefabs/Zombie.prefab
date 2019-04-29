@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 539470183042926449}
   - component: {fileID: 3370719461940398632}
   - component: {fileID: 1121756272000288025}
+  - component: {fileID: 1609613227886040723}
   - component: {fileID: 4097460081482474877}
   - component: {fileID: 1120208807410846348}
   m_Layer: 9
@@ -242,6 +243,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b230af8e2ebefdc46a426f25c367f6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 2
+  gravity: 40
+  playerJumpDistance: 7.5
+  jumpDelay: 0.4
+  jumpHeight: 1.25
 --- !u!114 &1121756272000288025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +267,22 @@ MonoBehaviour:
   rayInterval: 0.25
   maxClimbAngle: 45
   maxDescendAngle: 45
+--- !u!114 &1609613227886040723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2528021847745120473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 7d841e71f93be2741a285d86ac0264c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flipSmoothing: 0.1
+  anim: {fileID: 1120208807410846348}
+  zombieMovement: {fileID: 3370719461940398632}
 --- !u!61 &4097460081482474877
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -297,7 +319,7 @@ Animator:
   m_GameObject: {fileID: 2528021847745120473}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a832f676b1b9fba469e1ea69776f8ad3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 125f96ea1d3383e4ea42ce62dbdcaac8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
